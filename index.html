@@ -13,15 +13,30 @@
 </head>
 
 <body>
-    <h1>
-        🚴🏼‍♀️Bike Watching
-    </h1>
-    <p>
-        It's an interactive bike thing. It watches bikes.
-    </p>
+    <header>
+        <h1>
+            🚴🏼‍♀️Bike Watching
+        </h1>
+        <label>
+            Filter by time:
+            <input id="time-slider" type="range" min="-1" max="1440">
+            <div style="display: flex; flex-direction: column; padding-right: 1em;">
+                <em id="any-time" style="text-align: right; color: gray;">(any time)</em>
+                <time id="selected-time" style="text-align: right; ">11:59 PM</time>
+            </div>
+        </label>
+    </header>
     <div id="map">
         <svg></svg>
     </div>
+    <div class="legend">
+        <div style="--departure-ratio: 1; text-align: left; background-color: steelblue;">More departures</div>
+        <div style="--departure-ratio: 0.5; text-align: center; background-color: color-mix(in oklch,
+        steelblue, darkorange);">Balanced</div>
+        <div style="--departure-ratio: 0; text-align: right; background-color: darkorange;">More
+            arrivals</div>
+    </div>
+
 
     <!-- Mapbox GL JS JavaScript -->
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>

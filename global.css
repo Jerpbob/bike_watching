@@ -40,3 +40,38 @@ body {
     height: 100%;
     pointer-events: none;
 }
+
+header {
+    display: flex;
+    gap: 1em;
+    align-items: baseline;
+    width: 100%;
+}
+
+label {
+    margin-left: auto;
+}
+
+#map circle,
+.legend>div {
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(in oklch,
+            var(--color-departures) calc(100% * var(--departure-ratio)),
+            var(--color-arrivals));
+    fill: var(--color);
+}
+
+.legend {
+    display: flex;
+    margin-block: 1em;
+    gap: 0.1em;
+    width: 100%;
+
+    div {
+        flex: 1;
+        color: white;
+        padding: .5em;
+        font-weight: bold;
+    }
+}
